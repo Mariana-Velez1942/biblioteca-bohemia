@@ -50,7 +50,7 @@ class GestorUsuarios:
         conexion.close()
         return True
 
-    # ------------------ READ (LOGIN) ------------------
+    # ------------------ (LOGIN) ------------------
     def iniciar_sesion(self, correo, contrasena):
         conexion = conectar()
         cursor = conexion.cursor()
@@ -64,7 +64,7 @@ class GestorUsuarios:
         conexion.close()
         return usuario
 
-    # ------------------ READ (LISTAR) ------------------
+    # ------------------(LISTAR) ------------------
     def listar_usuarios(self):
         conexion = conectar()
         cursor = conexion.cursor()
@@ -90,7 +90,7 @@ class GestorUsuarios:
         conexion = conectar()
         cursor = conexion.cursor()
 
-        # Validación básica (reutilizando lógica)
+        # Validación básica
         if nombre.strip() == "" or apellido.strip() == "":
             print("Error: Nombre y apellido no pueden estar vacíos.")
             return
@@ -119,7 +119,7 @@ class GestorUsuarios:
         conexion = conectar()
         cursor = conexion.cursor()
 
-        # Evitar eliminar admin
+        # Ayuda a no eliminar admin
         if id_usuario == 1:
             print("No se puede eliminar el administrador.")
             return

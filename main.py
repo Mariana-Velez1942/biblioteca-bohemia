@@ -22,7 +22,7 @@ def menu_admin():
     print("  3. Buscar / Filtrar libros")
     print("  4. Modificar libro")
     print("  5. Eliminar libro")
-    print("  6. Gestionar usuarios")  # 👈 NUEVO
+    print("  6. Gestionar usuarios")  
     print("  0. Cerrar sesión")
     print("="*50)
 
@@ -37,7 +37,7 @@ def menu_usuario():
     print("="*50)
 
 
-def menu_usuarios():  # 👈 NUEVO
+def menu_usuarios():  
     print("\n" + "="*50)
     print("GESTIÓN DE USUARIOS")
     print("="*50)
@@ -72,7 +72,7 @@ def menu_acceso_usuario():
 def flujo_busqueda(bib):
     while True:
         submenu_busqueda()
-        op = input("\n👉 Elige una opción: ")
+        op = input("\ Elige una opción: ")
 
         if op == "1":
             titulo = input("Ingresa el título a buscar: ")
@@ -94,7 +94,7 @@ def flujo_busqueda(bib):
 
 
 def agregar(bib):
-    print("\n--- ➕ AGREGAR LIBRO ---")
+    print("---AGREGAR LIBRO ---")
     titulo  = input("Título   : ")
     autor   = input("Autor    : ")
     seccion = input("Sección  : ")
@@ -131,7 +131,7 @@ def modificar(bib):
     bib.listar_libros()
 
     try:
-        id_libro = int(input("\nIngresa el ID del libro a modificar: "))
+        id_libro = int(input("Ingresa el ID del libro a modificar: "))
     except ValueError:
         print("ID inválido.")
         return
@@ -168,7 +168,7 @@ def eliminar(bib):
     bib.listar_libros()
 
     try:
-        id_libro = int(input("\nIngresa el ID del libro a eliminar: "))
+        id_libro = int(input("---Ingresa el ID del libro a eliminar: "))
         confirmacion = input(f"¿Seguro que deseas eliminar el libro ID {id_libro}? (s/n): ")
         if confirmacion.lower() == "s":
             bib.eliminar_libro(id_libro)
@@ -259,7 +259,7 @@ def main():
                     elif op == "5":
                         eliminar(bib)
 
-                    # 👇 NUEVO BLOQUE USUARIOS
+                    
                     elif op == "6":
                         while True:
                             menu_usuarios()
